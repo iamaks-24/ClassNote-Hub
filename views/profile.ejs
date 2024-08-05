@@ -1,0 +1,60 @@
+<%- include('./Layouts/header') %>
+<br><br/>
+<h1> <%= person.department %></h1>
+
+<div class="file-container">
+    
+<!-- Search Bar -->
+<input type="text" id="searchBar" class="search-bar" placeholder="Search by NotesName..." onkeyup="filterFiles(event)">
+<br><br/>
+
+    <div id="filesContainer" class="files-container">
+        <% uploadedFiles.forEach((file, index) => { %>
+            <div class="file-card">
+                <div class="file-card-header">
+                    <h2><%= file.filename %></h2>
+                </div>
+                <div class="file-card-body">
+                    <p><strong>Date:</strong> <%= file.date %></p>
+                    <p><strong>Description:</strong> <%= file.description %></p>
+                    <p><strong>Uploaded By:</strong> <%= file.upload_by %></p>
+                    <p><strong>Department:</strong> <%= file.department %></p>
+                </div>
+                <div class="file-card-footer">
+                    <a target="_blank" href="<%= file.url %>" class="view-button">View Document</a>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>
+
+<script>
+    function filterFiles(event) {
+        var input = document.getElementById('searchBar');
+        var filter = input.value.toLowerCase();
+        var filesContainer = document.getElementById('filesContainer');
+        var cards = filesContainer.getElementsByClassName('file-card');
+
+        if (event.key === 'Enter') {
+            for (var i = 0; i < cards.length; i++) {
+                var filename = cards[i].querySelector('.file-card-header h2').textContent.toLowerCase();
+                if (filename === filter) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        } else {
+            for (var i = 0; i < cards.length; i++) {
+                var filename = cards[i].querySelector('.file-card-header h2').textContent.toLowerCase();
+                if (filename.indexOf(filter) > -1) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+
+<%- include('./Layouts/footer') %>

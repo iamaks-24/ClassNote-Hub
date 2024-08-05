@@ -1,0 +1,52 @@
+<%- include('./Layouts/header') %>
+
+
+<br><br/>
+<br><br/>
+<h1>Login</h1>
+<form action="/auth/login" method="post" class="lg-form" id="loginForm">
+  <div>
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username" />
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" />
+  </div>
+  <!-- <div class="checkbox-container">
+    <input type="checkbox" name="trustDevice" id="trustDevice" style="transform: scale(0.8);" />
+    <label for="trustDevice">Trust this device</label>
+  </div>
+   -->
+  
+    <input type="submit" value="Login" id="loginButton"  />
+       <!--id="loginButton" disabled -->
+  </div>
+</form>
+<%- include('./Layouts/footer') %>
+
+<!-- <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const trustDeviceCheckbox = document.getElementById('trustDevice');
+    const loginButton = document.getElementById('loginButton');
+    const loginForm = document.getElementById('loginForm');
+
+    // Disable login button by default
+    loginButton.disabled = true;
+
+    // Add event listener to checkbox
+    trustDeviceCheckbox.addEventListener('change', function() {
+      // Enable login button if checkbox is checked, otherwise disable it
+      loginButton.disabled = !trustDeviceCheckbox.checked;
+    });
+
+    // Add event listener to form submission
+    loginForm.addEventListener('submit', function(event) {
+      // Prevent form submission if checkbox is not checked
+      if (!trustDeviceCheckbox.checked) {
+        event.preventDefault();
+        alert('Please check the "Trust this device" box before proceeding with the login.');
+      }
+    });
+  });
+</script> -->

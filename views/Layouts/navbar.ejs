@@ -1,0 +1,31 @@
+<nav class="navbar">
+  <img src="/images/logo-ncet.png" alt="NCET" class="navbar-logo" />
+    
+  <button class="navbar-toggler" onclick="toggleMenu()">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <ul class="navbar-menu" id="navbarMenu">
+      <li><a href="/">Home</a></li>
+      <% if (user) { %>
+          <% if (user.role=="CLIENT") { %>
+              <li><a href="/user/profile">View Notes</a></li>
+              <li><a href="/user/upload">Upload Notes</a></li>
+          <% } %>
+          
+          <% if (user.role=='ADMIN') { %>
+              <li><a href="/admin/users">All Subjects</a></li>
+          <% } %>
+          <li><a href="/auth/logout">Logout</a></li>
+      <% } else {%> <li><a href="/auth/login">Login</a></li> <% } %>
+    </ul>
+  </nav>
+  
+  <script>
+    function toggleMenu() {
+      const navbarMenu = document.getElementById('navbarMenu');
+      navbarMenu.classList.toggle('active');
+    }
+  </script>
+  

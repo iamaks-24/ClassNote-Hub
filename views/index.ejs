@@ -1,0 +1,273 @@
+<%- include('./Layouts/header') %>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    padding-top: 120px; /* Adjusted for navbar height */
+    padding-bottom: 50px;
+    font-family: "Verdana", sans-serif;
+    color: #333;
+    background: radial-gradient(circle, rgba(65, 62, 62, 0.5), #ebedef);
+
+    text-align: center;
+    margin: 0;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+    width: 90%;
+   
+  }
+
+  h1 {
+    font-size: 1.5em;
+    color: #2b2b2b;
+    animation: slideIn 1s;
+  }
+
+  p {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+    animation: fadeIn 1.5s;
+  }
+
+  .note_img {
+    position: absolute; /* Use absolute positioning */
+    top: 0; /* Align to the top */
+    right: 0; /* Align to the right */
+    margin: 130px; /* Add some margin if needed */
+    width: 350px; /* Set a fixed width */
+    height: auto; /* Set a fixed height (same as width for a circle) */
+    overflow: hidden; /* Hide overflow to ensure circular shape */
+    border-radius: 50%; /* Make the shape circular */
+    animation: rotateImage 18s linear infinite; /* Add rotating animation */
+  }
+
+  .note_img img {
+    width: 100%; /* Make the image fill the container */
+    height: auto; /* Maintain the container's height */
+    object-fit: cover; /* Ensure the image covers the container without distortion */
+  }
+
+  .carousel-container {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    border-radius: 10px;
+    padding: 0px;
+    
+  }
+
+  .carousel {
+    display: flex;
+    animation: scroll 20s linear infinite;
+    will-change: transform;
+  }
+
+  .carousel-item {
+    flex: 0 0 auto;
+    max-width: 50%;
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: left; /* Align text to the left */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+  }
+
+  .carousel-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+
+  .carousel-item h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+  }
+
+  .carousel-item p {
+    font-size: 1em;
+    color: #333;
+  }
+
+  .carousel-container:hover .carousel {
+    animation-play-state: paused; /* Pauses the carousel when hovered */
+  }
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+  
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes rotateImage {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Media queries for various devices */
+  @media only screen and (max-width: 767px) {
+    /* Small devices */
+    body {
+      padding-top: 140px;
+    }
+    h1 {
+      font-size: 2.5em;
+    }
+    p {
+      font-size: 1.1em;
+    }
+    .quote {
+      font-size: 1em;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    /* Extra small devices */
+    body {
+      padding-top: 140px;
+    }
+    h1 {
+      font-size: 2em;
+    }
+    p {
+      font-size: 1em;
+    }
+    .quote {
+      font-size: 0.9em;
+    }
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    /* Medium devices */
+    body {
+      padding-top: 140px;
+    }
+    h1 {
+      font-size: 3em;
+    }
+    p {
+      font-size: 1.2em;
+    }
+  }
+
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    /* Large devices */
+    body {
+      padding-top: 140px;
+    }
+    h1 {
+      font-size: 3.5em;
+    }
+    p {
+      font-size: 1.3em;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    /* Extra large devices */
+    body {
+      padding-top: 140px;
+    }
+    h1 {
+      font-size: 4em;
+    }
+    p {
+      font-size: 1.4em;
+    }
+  }
+</style>
+
+<div class="container">
+  <h1 style="font-size:30px;">ClassNote-Hub</h1>
+  <h2 style="color: green;font-size:20px">6<sup>th</sup> sem - Data Science</h2>
+  <p style="color: rgb(57, 55, 55);font-size:18px">
+    Easy Access to Subject-specific Lecturer Notes for Students
+  </p>
+  <div class="note_img">
+    <img src="/images/notes.jpg" alt="notes" />
+  </div>
+  <br />
+  <h2>About Us</h2>
+  <br />
+  <p style="text-align: left; margin: 0; padding: 0; font-size:17px">
+    Welcome to ClassNote-Hub, where lecturers and students connect <br/>
+    effortlessly.Our platform simplifies note sharing, allowing lecturers<br/> 
+    to upload and manage materials, while students access valuable resources<br/> 
+    easily. Enhance your learning experience with our centralized hub for academic<br/>
+    content. Join us today!
+  </p>
+
+  <div class="carousel-container">
+    <div class="carousel">
+      <div class="carousel-item">
+        <img src="dept.jpg" alt="Student access" />
+        <h3 >Student <br/>access</h3>
+        <p style="color: black;">
+          Students can access notes for every subject.
+        </p>
+      </div>
+      <div class="carousel-item">
+        <img src="mgmt.jpg" alt="Lecturer access" />
+        <h3>Lecturer Access</h3>
+        <p style="color: black;">
+          Lecturers can upload, manage, and organize notes for their subjects, ensuring students have up-to-date and relevant resources.        </p>
+      </div>
+      <div class="carousel-item">
+        <img src="upload.png" alt="Easy Upload" />
+        <h3>Easy <br/>Upload</h3>
+        <p style="color: black;">Upload notes seamlessly with our user-friendly interface.</p>
+      </div>
+      <div class="carousel-item">
+        <img src="securiti.jpg" alt="Secure Access" />
+        <h3>Secure<br/> Access</h3>
+        <p style="color: black;" >Keep your documents secure with role-based access control.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('./Layouts/footer') %>

@@ -1,0 +1,837 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+body {
+  padding-top: 80px; /* Adjust this value to match or exceed the height of the navbar */
+  /* background: linear-gradient(to right, #ff7e5f, #feb47b); */
+  /* background: radial-gradient(circle, #e1d6d4, #1b1c42); Adjust the shape and colors as needed */
+  /* background: radial-gradient(circle, rgb(211, 211, 211),#001A4B); */
+  background: radial-gradient(circle, rgba(41, 39, 39, 0.5), #ebedef);
+  font-family: 'Space Mono', monospace;
+  font-family: 'Open Sans', sans-serif;
+  position: relative;
+  /* max-width: 760px; */
+  margin: auto;
+  font-size: 1rem;
+  font-family: 'Nunito', sans-serif;
+  min-height: 100vh;
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-bottom: 6.74rem;
+  box-sizing: inherit;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+    /* justify-content: center; /* Add this line to center vertically */
+  
+    
+}
+
+
+
+
+nav {
+  /* display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem; */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color:#ffffff; /* Adjust opacity as needed */  
+  top: 0;
+  z-index: 1000;
+  position: fixed;
+}
+
+nav > ul > li {
+  list-style: none;
+  display: inline-block;
+}
+
+nav > ul > li > a,
+a {
+  text-decoration: none;
+  color: #000000;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-family: "Poppins", Sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+nav > ul > li > a:hover,
+a:hover {
+  background-color: #dcdbdfd9;
+  color: #2a2929;
+}
+
+nav > ul > li:nth-child(1) > a:hover {
+  background-color: #dcdbdfd9;
+  color: #2a2929;
+}
+
+nav > ul > li:nth-child(2) > a:hover {
+  background-color:  #dcdbdfd9;
+  color:#2a2929;
+}
+
+nav > ul > li:nth-child(3) > a:hover {
+  background-color:  #dcdbdfd9;
+  color:#2a2929;
+}
+.navbar-logo {
+  width: 100px; /* Set the desired width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+h1.title {
+  text-align: center;
+  margin: 1rem;
+  text-decoration: underline;
+}
+h1{
+  color: #fff;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar {
+  width: auto;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+.files-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between; /* Add this line */
+}
+
+.file-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: calc(25% - 20px); /* Adjusted width */
+  margin-bottom: 20px; /* Add margin-bottom to create space between rows */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s;
+}
+
+.file-card:hover {
+  transform: scale(1.02);
+}
+
+.file-card-header {
+  background-color: #b4b2b2;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.file-card-body {
+  padding: 15px;
+}
+
+.file-card-footer {
+  padding: 10px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background-color:#b4b2b2;
+  
+}
+
+.view-button {
+  text-decoration: none;
+  color: #fff;
+  background-color:  #001A4B;
+  padding: 4px 13px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  font-size: 15px;
+}
+
+.view-button:hover {
+  background-color:  #0d3785;
+}
+
+/* Add styles for department card */
+.search-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+
+
+.search-icon {
+  margin-left: -30px;
+  cursor: pointer;
+}
+
+.file-container {
+  text-align: center;
+}
+
+.departments-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.department-card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 20px;
+  padding: 10px;
+  width: calc(25% - 40px); /* Adjust width for 4 cards per row */
+  box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+  box-sizing: border-box;
+}
+
+.department-card:hover {
+  transform: scale(1.05);
+}
+
+.department-card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.department-card-footer {
+  font-weight:bolder;
+  color: #f5f2f2;
+}
+
+
+.lg-form label,
+.lg-form input {
+  display: block;
+  min-width: 100%;
+  margin: 8px 0px;
+}
+
+.lg-form label {
+  font-weight: bold;
+}
+
+.lg-form input {
+  height: 44px;
+  border: none;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 1rem;
+  background-color: #f3f4f6;
+}
+
+.lg-form input[type='submit'] {
+  margin: 16px 0;
+  background-color: #001A4B;
+  color: #fff;
+  cursor: pointer;
+}
+
+.lg-form input[type='submit']:hover {
+  background-color:#253146 ;/* Change to desired hover background color */
+  color: #f8fafdf6; /* Change to desired hover text color */
+}
+
+/* Hover effect for input boxes */
+.lg-form input[type='text']:hover,
+.lg-form input[type='password']:hover {
+  background-color: #f8f8f8; /* Change to desired hover background color */
+}
+
+/* Box shadow for login form */
+form.lg-form {
+  margin: 16px;
+  padding: 32px;
+  border: 4px solid #d1d5db;
+  min-width: 400px;
+  border-radius: 16px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* Add box shadow */
+}
+
+input:focus {
+  outline: none;
+  background-color: #fff;
+  border: 2px solid #f3f4f6;
+  /* box-shadow: 0 0 8px #fdf2f8; */
+}
+
+.lg-form label{
+  color: #fff; /* Change to desired color */
+}
+
+.checkbox-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-bottom: 5px; /* Adjust as needed */
+}
+
+.copyright{
+    color: #ffffff;
+    font-weight: 8px;;
+    font-size: 10px;
+  
+}
+/* table {
+  margin-top: 32px;
+  min-width: 600px;
+  border-spacing: 0;
+  border: 4px solid #d1d5db;
+  padding: 16px;
+  border-radius: 16px;
+}
+
+thead {
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+thead tr {
+  border-radius: 8px;
+  background-color: #001A4B;
+  overflow: hidden;
+}
+
+thead th {
+  padding: 8px 0;
+  text-align: left;
+  padding-left: 16px;
+}
+
+table th:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
+table th:last-child {
+  border-radius: 0 10px 10px 0;
+}
+thead th:nth-child(1) {
+  max-width: 44px;
+}
+
+tbody tr td {
+  padding: 8px 0;
+  margin: 8px 0;
+  color: #fff;
+}
+
+.manage-user-form input[type='submit'] {
+  background: transparent;
+  color:#001A4B;
+  border: none;
+  outline: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.manage-user-form input[type='submit']:hover {
+  background-color: #fdf2f8;
+}
+
+.manage-user-form select {
+  border: none;
+  font-size: 1.05rem;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 2px solid #f3f4f6;
+}
+
+thead tr th:first-child,
+tbody tr td:first-child {
+  width: 6em;
+  min-width: 6em;
+  max-width: 6em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 8px;
+} */
+
+.profile {
+  min-width: 600px;
+  padding: 16px;
+  border: 4px solid #d1d5db;
+  border-radius: 16px;
+  margin-top: 32px;
+  align-items: center;
+}
+
+.profile > div {
+  padding: 16px;
+}
+
+.profile .title {
+  font-weight: bold;
+}
+
+.goback {
+  cursor: pointer;
+}
+
+div.messages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul.messages {
+  list-style: none;
+  min-width: 600px;
+  max-width: 600px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 16px;
+}
+
+ul.messages * {
+  padding: 8px 12px;
+}
+/* Center the messages container horizontally */
+.messages-container {
+  position: fixed;
+  top: 80px; /* Adjust this value to match the height of your navbar */
+  left: 0;
+  right: 0;
+  margin: auto; /* Center horizontally */
+  width: 80%; /* Adjust the width as needed */
+  max-width: 600px; /* Limit the maximum width */
+  z-index: 1000; /* Ensure messages are displayed above other content */
+}
+
+.messages .error {
+  background-color: #f87171;
+}
+.messages .success {
+  background-color: #6ee7b7;
+}
+.messages .warning {
+  background-color: #fcd34d;
+}
+.messages .info {
+  background-color: #93c5fd;
+}
+
+/* footer {
+  position: fixed;
+  background-color:#134a91d9; 
+  padding: 10px;
+  bottom: 0%;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  right: 0;
+  left: 0;
+} */
+footer {
+  position: fixed;
+  background-color: #001A4B; /* Change this to your desired background color */
+  padding: 20px; /* Adjust padding as needed */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+}
+
+footer div {
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+footer p{
+  font-size: 10px;
+  margin: 0;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* upload form css */
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  width: 100%;
+    height: auto; /* 100% of the viewport height */
+    padding: 0px; /* Optional: Add padding if needed */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+
+    /* Add or adjust other styles as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.form-group {
+  margin-bottom: 1.5rem;
+  color: #000000;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+label {
+  font-weight: bold;
+  color: #fff;
+}
+
+input[type="text"],
+input[type="date"],
+textarea,
+input[type="file"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="file"] {
+  border: none;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color:#001A4B;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #283449;
+}
+
+textarea {
+  height: 100px; /* Set a fixed height */
+  resize:none;
+  overflow-y: auto; /* Add a vertical scrollbar when needed */
+}
+
+.card {
+  border: 1px solid #6c6969;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-color: #ccc;
+  min-height: 300px; /* Set a minimum height */
+  max-height: 650px; /* Set a maximum height */
+  height: 100vh; 
+  
+}
+
+
+
+/* Styles for small screens */
+@media only screen and (max-width: 767px) {
+
+  body {
+    padding-top: 100px; /* Adjust this value to match or exceed the height of the navbar */
+    background-size: auto; /* Adjust background size as needed for smaller screens */
+    padding-left: 20px;
+    padding-right: 20px;
+    
+  }
+  
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10; /* Ensures the navbar is above the image */
+  color: white; /* Makes text stand out */
+  }
+  .navbar-logo {
+    width: 130px; /* Set the desired width */
+    height: auto; /* Maintain aspect ratio */
+  }
+  .lg-form {
+    margin: 16px; /* Maintain gap on all sides */
+    padding: 32px; /* Add padding */
+    border: 4px solid #d1d5db;
+    min-width: 400px;
+    margin-bottom: 60px;
+    border-radius: 16px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); /* Add box shadow */
+  }
+  /* table {
+    min-width: auto; 
+    width: calc(100% - 32px); 
+    margin-left: 16px;
+    margin-right: 16px; 
+    padding: 8px;
+    margin: 0;
+    overflow-x: auto;
+  } */
+
+  .navbar h1 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  .container.my-5 {
+    margin: 50px;
+  }
+
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container.my-5 .row {
+    max-height: calc(100vh - 200px); 
+    overflow-y: auto;}
+  
+    .navbar ul {
+      display: none;
+      flex-direction: column; /* Arranges items vertically */
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      color: #001A4B;
+      padding: 10px 0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      background-color: #001A4B; /* Add background color for visibility */
+      z-index: 5; 
+      /* #Ensure dropdown menu appears above other elements */
+    }
+
+  .navbar ul.active {
+    display: block;
+  }
+
+  .navbar-menu {
+    display: flex;
+    list-style: none; /* Remove default bullets */
+    margin: 0;
+    padding: 0;
+    background-color: #001A4B;
+    text-align: center;
+    margin-top: 25px;
+  }
+
+  .navbar-menu li {
+   
+    margin: 0; /* Remove margin to ensure the full region is clickable */
+    padding: 0; /* Remove padding to ensure the full region is clickable */
+  }
+
+  .navbar-menu li a {
+    padding: 10px;
+    text-align: center;
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    width: 100%; /* Ensure link takes full width of its container */
+    
+    cursor: pointer;
+   
+  }
+  .navbar-menu li a:hover {
+    background-color: #0056b3; /* Add hover effect */
+}
+  .navbar-toggler {
+    display: block;
+    background: none;
+    border: none;
+    cursor:pointer;
+    padding: 10px;
+    
+    
+  }
+
+  .navbar-toggler .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #000000;
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+  
+  .uploaded-files th,
+  .uploaded-files td {
+    min-width: auto; 
+    width: auto; 
+    white-space: nowrap; 
+  }
+
+  .uploaded-files td:first-child {
+    width: 20%;
+  }
+}
+
+
+
+.btn {
+  display: inline-block;
+  background-color:#001A4B;
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #253146 
+}
+.custom-background {
+  background-color:#001A4B
+}
+
+.file-container {
+  overflow-x: auto; /* Enable horizontal scrolling on smaller screens */
+  width: 80vw;
+}
+
+.uploaded-files {
+  margin-top: 32px;
+  width: 100%;
+  border-collapse: collapse;
+  
+}
+
+.uploaded-files th,
+.uploaded-files td {
+  border: 1px solid #d1d5db;
+  padding: 10px;
+  min-width: 10px;
+  max-width: none; 
+}
+
+.uploaded-files th {
+  background-color: #001A4B;
+  color: #fff;
+}
+
+
+.uploaded-files td a {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color:  #001A4B;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+.search-bar:hover {
+  border: 2px solid #0d3785;
+  transition: border 0.3s ease-in-out;
+}
+
+.card {
+  border: 1px solid #6c6969;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-color: #ccc;
+}
+
+.card-header {
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1200px) {
+  .file-card, .department-card {
+    width: calc(33.33% - 40px);
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .file-card, .department-card {
+    width: calc(50% - 40px);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .file-card, .department-card {
+    width: calc(100% - 40px);
+  }
+  
+  .lg-form {
+    min-width: auto;
+    width: 100%;
+  }
+
+
+}
+
+@media only screen and (max-width: 576px) {
+  .file-card, .department-card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  
+  .search-bar {
+    width: 80%;
+    font-size: 14px;
+  }
+}
