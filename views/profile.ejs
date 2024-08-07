@@ -8,9 +8,10 @@
 <input type="text" id="searchBar" class="search-bar" placeholder="Search by NotesName..." onkeyup="filterFiles(event)">
 <br><br/>
 
-    <div id="filesContainer" class="files-container">
-        <% uploadedFiles.forEach((file, index) => { %>
-            <div class="file-card">
+<div id="filesContainer" class="files-container">
+    <% uploadedFiles.forEach((file, index) => { %>
+        <div class="file-card">
+            <div class="file-card-content">
                 <div class="file-card-header">
                     <h2><%= file.filename %></h2>
                 </div>
@@ -20,12 +21,14 @@
                     <p><strong>Uploaded By:</strong> <%= file.upload_by %></p>
                     <p><strong>Department:</strong> <%= file.department %></p>
                 </div>
-                <div class="file-card-footer">
-                    <a target="_blank" href="<%= file.url %>" class="view-button">View Document</a>
-                </div>
             </div>
-        <% }) %>
-    </div>
+            <div class="file-card-footer">
+                <a target="_blank" href="<%= file.url %>" class="view-button">View Document</a>
+            </div>
+        </div>
+    <% }) %>
+</div>
+
 </div>
 
 <script>
